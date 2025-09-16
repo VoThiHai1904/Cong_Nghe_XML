@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<thuvien>
+    <sach>
+        <title>Truyện Kiều</title>
+        <author>Nguyễn Du</author>
+        <year>1820</year>
+        <genre>Thơ ca, Văn học cổ điển</genre>
+    </sach>
+    <sach>
+        <title>Tắt đèn</title>
+        <author>Ngô Tất Tố</author>
+        <year>1939</year>
+        <genre>Tiểu thuyết xã hội</genre>
+    </sach>
+    <sach>
+        <title>Chí Phèo</title>
+        <author>Nam Cao</author>
+        <year>1941</year>
+        <genre>Truyện ngắn, Hiện thực phê phán</genre>
+    </sach>
+</thuvien>
+
