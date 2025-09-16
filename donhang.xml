@@ -1,12 +1,26 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!--
-Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
-Click nbfs://nbhost/SystemFileSystem/Templates/XML/XMLDocument.xml to edit this template
--->
-
-
-
-<root>
-    
-</root>
+<orders xmlns:order="http://company.com/order" xmlns:prod="http://company.com/product">
+    <order:order id="O001" customer="Nguyễn Văn Hòa" date="2025-03-02">
+        <prod:item id="P001" quantity="2" price="15000000">
+            <prod:name>Điện thoại Samsung</prod:name>
+        </prod:item>
+        <prod:item id="P002" quantity="1" price="25000000">
+            <prod:name>Laptop Dell</prod:name>
+        </prod:item>
+        <prod:item id="P002" quantity="5" price="15000">
+            <prod:name>viết</prod:name>
+        </prod:item>
+    </order:order>
+    <order:order id="O002" customer="Trần Thị Huyền" date="2025-03-03">
+        <prod:item id="P003" quantity="3" price="500000">
+            <prod:name>Áo sơ mi nam</prod:name>
+        </prod:item>
+        <prod:item id="P004" quantity="2" price="200000">
+            <prod:name>Giày thể thao</prod:name>
+        </prod:item>
+        <prod:item id="P001" quantity="1" price="75000">
+            <prod:name>gương</prod:name>
+        </prod:item>
+    </order:order>
+</orders>
 
