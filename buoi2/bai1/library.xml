@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE library SYSTEM "library.dtd">
+<library>
+    <book id="B001">
+        <title>Cánh đồng bất tận</title>
+        <author>Nguyễn Ngọc Tư</author>
+        <year>2005</year>
+        <genre>Truyện ngắn</genre>
+    </book>
+
+    <book id="B002">
+        <title>Nhà Giả Kim</title>
+        <author>Paulo Coelho</author>
+        <year>1988</year>
+        <genre>Tiểu thuyết</genre>
+    </book>
+
+    <book id="B003">
+        <title>Lập trình C++</title>
+        <author>Bjarne Stroustrup</author>
+        <year>1985</year>
+        <genre>Khoa học máy tính</genre>
+    </book>
+</library>

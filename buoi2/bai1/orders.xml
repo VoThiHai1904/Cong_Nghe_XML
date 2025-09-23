@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE orders SYSTEM "orders.dtd">
+<orders>
+    <order id="O001">
+        <product id="P001">
+            <name>Dien thoai samsung A80</name>
+            <quantity>1</quantity>
+        </product>
+        <product id="P002">
+            <name>Chuot Logitech MX Master</name>
+            <quantity>5</quantity>
+        </product>
+        <product id="P003">
+            <name>Ban phim co</name>
+            <quantity>2</quantity>
+        </product>
+    </order>
+    <order id="O002">
+        <product id="P004">
+            <name>Nước tẩy trang 3-in-1 L'Oreal Paris Micellar Water 400ml</name>
+            <quantity>3</quantity>
+        </product>
+        <product id="P005">
+            <name>Tai Nghe Bluetooth X55 Màn Hình LED </name>
+            <quantity>1</quantity>
+        </product>
+        <product id="P006">
+            <name>Quạt M2 5000mAh di động</name>
+            <quantity>2</quantity>
+        </product>
+    </order>
+</orders>
