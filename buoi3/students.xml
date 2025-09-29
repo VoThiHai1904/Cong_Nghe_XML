@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<students xmlns="http://example.com/airline"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://example.com/airline students.xsd">
+    <student id="SV001">
+        <name>Nguyen Van Thanh</name>
+        <dob>2005-05-15</dob>
+        <major>Ky thuat phan mem</major>
+    </student>
+    <student id="SV002">
+        <name>Tran My Uyen</name>
+        <dob>2001-09-22</dob>
+        <major>Ke toan</major>
+    </student>
+    <student id="SV003">
+        <name>Nguyen Kieu Ha My</name>
+        <dob>2003-09-22</dob>
+        <major>Khoa hoc du lieu</major>
+    </student>
+</students>
