@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/quanan"
+           xmlns="http://example.com/quanan"
+           elementFormDefault="qualified">
+
+    <!-- Phần tử gốc QUANAN: Định nghĩa kiểu phức hợp với sequence chứa các thực thể NHANVIEN, HOADON, BAN, MON (maxOccurs unbounded cho phép lặp lại). -->
+    <xs:element name="QUANAN">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- Định nghĩa NHANVIEN: Phần tử lặp lại, sequence với các trường theo ERD (MANV khóa chính, Username min 6-max 50, Password min 10-max 50). -->
+                <xs:element name="NHANVIEN" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <!-- MANV: Kiểu string, maxLength 10 (PK char(10) trong ERD). -->
+                            <xs:element name="MANV">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- TenNV: Kiểu string, maxLength 50 (varchar(50) trong ERD). -->
+                            <xs:element name="TenNV">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- SDT: Kiểu string, length 10, pattern cho số điện thoại Việt Nam (varchar(10) trong ERD). -->
+                            <xs:element name="SDT">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:length value="10"/>
+                                        <xs:pattern value="0[0-9]{9}"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- Diachi: Kiểu string, maxLength 100 (text(100) trong ERD). -->
+                            <xs:element name="Diachi">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="100"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- GioiTinh: Kiểu string, enumeration Nam/Nữ (char(5) trong ERD). -->
+                            <xs:element name="GioiTinh">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:enumeration value="Nam"/>
+                                        <xs:enumeration value="Nữ"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- UserName: Kiểu string, minLength 6-maxLength 50 (char(50) trong ERD, ràng buộc theo yêu cầu). -->
+                            <xs:element name="UserName">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="6"/>
+                                        <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <!-- PassWord: Kiểu string, minLength 10-maxLength 50 (char(50) trong ERD, ràng buộc theo yêu cầu). -->
+                            <xs:element name="PassWord">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:minLength value="10"/>
+                                        <xs:maxLength value="50"/>
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Định nghĩa HOADON: Phần tử lặp lại, sequence với SoHD (PK integer), NgayLap (date), TongTien (float), ThamToan (FK to MANV), CTHD (FK to SoBan), Soluong (integer từ mối quan hệ). -->
+                <xs:element name="HOADON" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="SoHD" type="xs:integer"/> <!-- PK integer trong ERD. -->
+                            <xs:element name="NgayLap" type="xs:date"/> <!-- Ngày theo định dạng YYYY-MM-DD. -->
+                            <xs:element name="TongTien" type="xs:float"/> <!-- Tổng tiền kiểu số thực. -->
+                            <xs:element name="ThamToan">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"/> <!-- FK char(10) đến MANV. -->
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="CTHD">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"/> <!-- FK đến SoBan. -->
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Soluong" type="xs:integer"/> <!-- Số lượng từ mối quan hệ. -->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Định nghĩa BAN: Phần tử lặp lại, sequence với TenBan (char(10)), SoBan (PK integer). -->
+                <xs:element name="BAN" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="TenBan">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"/> <!-- char(10) trong ERD. -->
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="SoBan" type="xs:integer"/> <!-- PK integer trong ERD. -->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- Định nghĩa MON: Phần tử lặp lại, sequence với MaMon (PK char(10)), TenMon (varchar(50)), Gia (float), HinhAnh (text). -->
+                <xs:element name="MON" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="MaMon">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="10"/> <!-- PK char(10) trong ERD. -->
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="TenMon">
+                                <xs:simpleType>
+                                    <xs:restriction base="xs:string">
+                                        <xs:maxLength value="50"/> <!-- varchar(50) trong ERD. -->
+                                    </xs:restriction>
+                                </xs:simpleType>
+                            </xs:element>
+                            <xs:element name="Gia" type="xs:float"/> <!-- Giá kiểu số thực. -->
+                            <xs:element name="HinhAnh" type="xs:string"/> <!-- Hình ảnh text trong ERD. -->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <!-- Ràng buộc khóa chính: Đảm bảo MANV, SoHD, SoBan, MaMon duy nhất. -->
+        <xs:key name="NhanVienKey">
+            <xs:selector xpath="NHANVIEN"/>
+            <xs:field xpath="MANV"/>
+        </xs:key>
+        <xs:key name="HoaDonKey">
+            <xs:selector xpath="HOADON"/>
+            <xs:field xpath="SoHD"/>
+        </xs:key>
+        <xs:key name="BanKey">
+            <xs:selector xpath="BAN"/>
+            <xs:field xpath="SoBan"/>
+        </xs:key>
+        <xs:key name="MonKey">
+            <xs:selector xpath="MON"/>
+            <xs:field xpath="MaMon"/>
+        </xs:key>
+        <!-- Ràng buộc khóa ngoại: ThamToan ref NhanVienKey, CTHD ref BanKey, Soluong ref MonKey (giả định từ mối quan hệ). -->
+        <xs:keyref name="HoaDonThamToanRef" refer="NhanVienKey">
+            <xs:selector xpath="HOADON"/>
+            <xs:field xpath="ThamToan"/>
+        </xs:keyref>
+        <xs:keyref name="HoaDonCTHDRef" refer="BanKey">
+            <xs:selector xpath="HOADON"/>
+            <xs:field xpath="CTHD"/>
+        </xs:keyref>
+        <xs:keyref name="HoaDonSoluongRef" refer="MonKey">
+            <xs:selector xpath="HOADON"/>
+            <xs:field xpath="Soluong"/>
+        </xs:keyref>
+    </xs:element>
+</xs:schema>

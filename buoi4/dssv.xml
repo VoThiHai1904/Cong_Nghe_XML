@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<DSSV xmlns="http://example.com/dssv"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://example.com/dssv dssv.xsd">
+    <SINHVIEN>
+        <MS>SV001</MS>
+        <HoTen>Nguyễn Văn An</HoTen>
+        <Email>sv001@email.com</Email>
+        <SDT>0123456789</SDT>
+        <THUC>LOP001</THUC>
+    </SINHVIEN>
+    <SINHVIEN>
+        <MS>SV002</MS>
+        <HoTen>Trần Thị Bình</HoTen>
+        <Email>sv002@email.com</Email>
+        <SDT>0987654321</SDT>
+        <THUC>LOP002</THUC>
+    </SINHVIEN>
+    <SINHVIEN>
+        <MS>SV003</MS>
+        <HoTen>Lê Văn Cường</HoTen>
+        <Email>sv003@email.com</Email>
+        <SDT>0912345678</SDT>
+        <THUC>LOP003</THUC>
+    </SINHVIEN>
+    <SINHVIEN>
+        <MS>SV004</MS>
+        <HoTen>Phạm Thị Dung</HoTen>
+        <Email>sv004@email.com</Email>
+        <SDT>0567890123</SDT>
+        <THUC>LOP004</THUC>
+    </SINHVIEN>
+    <SINHVIEN>
+        <MS>SV005</MS>
+        <HoTen>Hoàng Văn Em</HoTen>
+        <Email>sv005@email.com</Email>
+        <SDT>0345678901</SDT>
+        <THUC>LOP005</THUC>
+    </SINHVIEN>
+    <LOP>
+        <MA>LOP001</MA>
+        <Ten>Lớp Toán Cao Cấp 101</Ten>
+        <QuanLy>KHOA01</QuanLy>
+    </LOP>
+    <LOP>
+        <MA>LOP002</MA>
+        <Ten>Lớp Vật Lý Nền Tảng 202</Ten>
+        <QuanLy>KHOA02</QuanLy>
+    </LOP>
+    <LOP>
+        <MA>LOP003</MA>
+        <Ten>Lớp Hóa Học Cơ Bản 303</Ten>
+        <QuanLy>KHOA03</QuanLy>
+    </LOP>
+    <LOP>
+        <MA>LOP004</MA>
+        <Ten>Lớp Sinh Học Nâng Cao 404</Ten>
+        <QuanLy>KHOA04</QuanLy>
+    </LOP>
+    <LOP>
+        <MA>LOP005</MA>
+        <Ten>Lớp Tin Học Ứng Dụng 505</Ten>
+        <QuanLy>KHOA05</QuanLy>
+    </LOP>
+    <KHOA>
+        <MA>KHOA01</MA>
+        <Ten>Toán Học</Ten>
+    </KHOA>
+    <KHOA>
+        <MA>KHOA02</MA>
+        <Ten>Vật Lý</Ten>
+    </KHOA>
+    <KHOA>
+        <MA>KHOA03</MA>
+        <Ten>Hóa Học</Ten>
+    </KHOA>
+    <KHOA>
+        <MA>KHOA04</MA>
+        <Ten>Sinh Học</Ten>
+    </KHOA>
+    <KHOA>
+        <MA>KHOA05</MA>
+        <Ten>Tin Học</Ten>
+    </KHOA>
+</DSSV>

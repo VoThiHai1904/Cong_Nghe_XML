@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://example.com/airline"
+           xmlns="http://example.com/airline"
+           elementFormDefault="qualified">
+    <xs:element name="school">
+        <xs:complexType>
+            <xs:sequence>
+                <!-- 'student': Phần tử lặp lại (unbounded), mỗi sinh viên có id (khóa chính), name, date -->
+                <xs:element name="student" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="id" type="xs:string"/> <!-- ID: Khóa chính, duy nhất toàn cục -->
+                            <xs:element name="name" type="xs:string"/> <!-- Tên sinh viên -->
+                            <xs:element name="date" type="xs:date"/> <!-- Ngày sinh, định dạng YYYY-MM-DD -->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+                <!-- 'enrollment': Phần tử lặp lại, tham chiếu studentRef (khóa ngoại) và course -->
+                <xs:element name="enrollment" maxOccurs="unbounded">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="studentRef" type="xs:string"/> <!-- Tham chiếu ID sinh viên -->
+                            <xs:element name="course" type="xs:string"/> <!-- Tên khóa học -->
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+        <!-- Ràng buộc khóa chính: Đảm bảo ID sinh viên duy nhất -->
+        <xs:key name="StudentKey">
+            <xs:selector xpath="student"/>
+            <xs:field xpath="id"/>
+        </xs:key>
+        <!-- Ràng buộc khóa ngoại: Đảm bảo studentRef khớp với ID hợp lệ -->
+        <xs:keyref name="EnrollmentStudentRef" refer="StudentKey">
+            <xs:selector xpath="enrollment"/>
+            <xs:field xpath="studentRef"/>
+        </xs:keyref>
+    </xs:element>
+</xs:schema>
